@@ -1,0 +1,50 @@
+﻿<Window x:Class="WpfApp8.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp8"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height ="1*"/>
+            <RowDefinition Height ="1*"/>
+            <RowDefinition Height ="1*"/>
+            <RowDefinition Height ="1*"/>
+            <RowDefinition Height ="1*"/>
+            <RowDefinition Height ="1*"/>
+            <RowDefinition Height ="1*"/>
+            <RowDefinition Height ="1*"/>
+            <RowDefinition Height ="1*"/>
+            <RowDefinition Height ="1*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+
+        </Grid.ColumnDefinitions>
+        <Slider x:Name="musicSlider"  Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="4"  ValueChanged="musicSlider_ValueChanged"/>
+        <Button x:Name="Opn" Content="Открыть папку с музыкой"  Grid.Row="0"  Grid.ColumnSpan="2" Click="OpenFile_Click" />
+        <Button Grid.ColumnSpan="2" Content="История прослушивания" Grid.Column="2" IsEnabled="False" />
+        <Button Content="Воспроизвести" Grid.Row="8" Click="Button_Click_1" />
+        <Button Content="Пауза"  Grid.Row="9" Click="Button_Click"/>
+        <Button Grid.Column="1" Content="Следующий трек" Grid.Row="8" Click="Button_Click_2"/>
+        <Button Grid.Column="1" Content="Предыдущий трек" Grid.Row="9" Click="Button_Click_3"/>
+        <Button Grid.Column="2" Content="Повтор" Grid.Row="8"  IsEnabled="False"  />
+        <Button Grid.Column="2" Content="Случайно" Grid.Row="9" IsEnabled="False"/>
+        <Slider x:Name="audioSlider" Grid.Column="4"   Grid.Row="8" Grid.RowSpan="2" />
+        <MediaElement x:Name="media" Grid.RowSpan="6" LoadedBehavior="Manual" Grid.Row="1" Grid.ColumnSpan="4" MediaOpened="media_MediaOpened" MediaEnded="media_MediaEnded"/>
+
+        <TextBlock x:Name="qwe" Grid.Column="3" Grid.Row="6" TextWrapping="Wrap"/>
+        <TextBlock x:Name="qwer" Grid.Row="6" TextWrapping="Wrap" Text="" Grid.Column="2"  />
+        <ListBox Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="4" x:Name="ListBox" SelectionChanged="ListBox_SelectionChanged"  />
+
+
+
+
+    </Grid>
+</Window>
